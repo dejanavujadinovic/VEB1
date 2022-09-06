@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Zaposleni";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            width: 80%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2>Zaposleni</h2>
+
+    <table>
+        <tr>
+            <th>Korisnicko ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Pol</th>
+            <th>Datum rodjenja</th>
+            <th>Email</th>
+        </tr>
+
+        @foreach (var item in ViewBag.Zaposleni)
+        {
+            <tr>
+                <td>@item.KorisnickoIme</td>
+                <td>@item.Ime</td>
+                <td>@item.Prezime</td>
+                <td>@item.Pol</td>
+                <td>@item.FormatiranDatum</td>
+                <td>@item.Email</td>
+                <td align="center">
+                    <form action="~/Vlasnik/BlokirajTrenera">
+                        <input type="text" name="korisnickoIme" value="@item.KorisnickoIme" hidden />
+                        <input type="submit" value="Blokiraj" />
+                    </form>
+                </td>
+            </tr>
+        }
+            
+        </table>
+</body>

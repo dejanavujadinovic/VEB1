@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "DodajTrenera";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            width: 80%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+        p {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>DodajTrenera</h2>
+    <p style="color:red;">@ViewBag.Error</p>
+    <form action="~/Vlasnik/DodajTrenera" method="post">
+        <table>
+            <tr>
+                <td>Korisnicko ime</td>
+                <td>
+                    <input type="text" name="korisnickoIme" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Lozinka</td>
+                <td>
+                    <input type="password" name="lozinka" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Ime</td>
+                <td>
+                    <input type="text" name="ime" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Prezime</td>
+                <td>
+                    <input type="text" name="prezime" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Pol</td>
+                <td>
+                    <select name="pol">
+                        <option>Musko</option>
+                        <option>Zensko</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" name="email" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Datum rodjenja</td>
+                <td>
+                    <input type="text" name="datumRodjenja" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Fitnes centar</td>
+                <td>
+                    <select name="centar">
+                        @foreach (var item in ViewBag.CentriVlasnika)
+                        {
+                            <option>@item.Naziv</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Posalji" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

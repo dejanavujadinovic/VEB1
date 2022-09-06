@@ -1,0 +1,9 @@
+1;Grupni trening 1;yoga;4;120;12/3/2015 12:32:42 PM;10;False
+2;Grupni trening 2;body pump;4;120;9/6/2022 12:32:42 PM;10;False
+3;Grupni trening 3;yoga;2;120;7/3/2022 12:32:42 PM;10;True
+4;Grupni trening 4;les mills tone;2;90;12/10/2022 12:32:42 PM;20;True
+5;Grupni trening 5;;4;50;7/2/2022 12:00:00 AM;15;True
+6;Grupni trening 6;kardio;4;50;07/07/2022 00:00:00;25;False
+7;ww;ww;4;45;5/5/2022 12:00:00 AM;79;False
+8;Grupni trening X;yoga;4;60;06/07/2022 16:00:00;1;False
+9;Novi trening;kardio;0;45;09/07/2022 16:45:00;2;False

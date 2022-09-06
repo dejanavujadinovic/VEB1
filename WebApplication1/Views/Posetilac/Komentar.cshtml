@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Komentar";
+}
+
+<h2>Komentar</h2>
+
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 42%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+ 
+<body>
+    <form action="~/Posetilac/Komentari">
+        <table>
+            <tr>
+                <th>Unesite komentar</th>
+                <td>
+                    <input type="text" name="komentar" width="50" height="150"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Ocena</th>
+                <td>
+                    <select name="ocena">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" value="Posalji"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

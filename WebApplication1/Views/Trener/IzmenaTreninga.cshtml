@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "IzmenaTreninga";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style'
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <p style="color:red; font-size:15px;">@ViewBag.Error</p>
+    <h2>IzmenaTreninga</h2>
+
+    <form action="~/Trener/IzmenaTreninga" method="post" class="forma">
+        <table>
+            <tr>
+                <td>Naziv</td>
+                <td>
+                    <input type="text" name="naziv" value="@ViewBag.Trening.Naziv" />
+                </td>
+            </tr>
+            <tr>
+                <td>Tip treninga</td>
+                <td>
+                    <input type="text" name="tipTreninga" value="@ViewBag.Trening.TipTreninga" />
+                </td>
+            </tr>
+            <tr>
+                <td>Trajanje treninga</td>
+                <td>
+                    <input type="number" name="trajanjeTreninga" value="@ViewBag.Trening.TrajanjeTreninga" />
+                </td>
+            </tr>
+            <tr>
+                <td>Datum i vreme treninga</td>
+                <td>
+                    <input type="text" name="datumVremeTreninga" value="@ViewBag.Trening.FormatiranDatum" />
+                </td>
+            </tr>
+            <tr>
+                <td>Maksimalan broj posetilaca</td>
+                <td>
+                    <input type="number" name="maxPosetilaca" value="@ViewBag.Trening.MaxPosetilaca" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="text" name="id" value="@ViewBag.Trening.Id" hidden />
+                    <input type="submit" value="Posalji" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

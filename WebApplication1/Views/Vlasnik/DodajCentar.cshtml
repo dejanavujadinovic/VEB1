@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "DodajCentar";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            width: 80%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2>DodajCentar</h2>
+
+    <form action="~/Vlasnik/DodajCentar" method="post">
+        <table>
+            <tr>
+                <td>Naziv</td>
+                <td>
+                    <input type="text" name="naziv" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Adresa</td>
+                <td>
+                    <input type="text" name="adresa" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Godina otvaranja</td>
+                <td>
+                    <input type="number" name="godina" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Cena mesecne clanarine</td>
+                <td>
+                    <input type="number" name="cenaMesecne" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Cena godisnje clanarine</td>
+                <td>
+                    <input type="number" name="cenaGodisnje" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Cena jednog treninga</td>
+                <td>
+                    <input type="number" name="cenaTreninga" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Cena jednog grupnog treninga</td>
+                <td>
+                    <input type="number" name="cenaGrupnog" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Cena jednog treninga sa trenerom</td>
+                <td>
+                    <input type="number" name="cenaPersonalnog" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Posalji" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

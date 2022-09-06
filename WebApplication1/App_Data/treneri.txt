@@ -1,0 +1,6 @@
+﻿pera;1
+pera;2
+pera;6
+pera;7
+pera;8
+lea;9

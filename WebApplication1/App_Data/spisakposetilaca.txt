@@ -1,0 +1,10 @@
+﻿4;maja
+1;dd
+2;maja
+2;dd
+3;maja
+5;maja
+3;marko
+2;marko
+6;luka
+4;luka

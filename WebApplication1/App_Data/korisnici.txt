@@ -1,0 +1,15 @@
+pera;pera;pera;peric;Musko;pera@uns.ac.rs;18/03/1998 00:00:00;Trener;False
+maja;maja;maja;lukic;Musko;maja@uns.ac.rs;8/8/1999 12:00:00 AM;Posetilac;False
+admin;123;admin;admin;Musko;admin@uns.ac.rs;6/6/2006 12:32:42;Vlasnik;False
+dd;dd;dd;dd;Zensko;dd;10/5/1999 12:32:42;Posetilac;False
+aa;aa;aa;aa;Zensko;aa;5/5/2022 12:00:00 AM;Trener;True
+cc;cc;cc;cc;Zensko;cc;06/06/2000 00:00:00;Trener;True
+bb;bb;bb;bb;Musko;bb;6/6/2000 12:00:00 AM;Trener;True
+ss;ss;ss;ss;Musko;ss;1/1/2001 12:00:00 AM;Posetilac;False
+sanja;sanja;Sanja;Matic;Zensko;sanja@uns.ac.rs;22/5/1999 12:00:00 AM;Posetilac;False
+dejana;dejana;Dejana;Vujadinovic;Zensko;dejana@gmail.com;22/9/1999 12:00:00 AM;Vlasnik;False
+sara;sara;Sara;Dukic;Zensko;sara@uns.ac.rs;26/2/1999 12:00:00 AM;Trener;False
+marko;marko;Marko;Markovic;Musko;marko@yahoo.com;9/9/1995 12:00:00 AM;Posetilac;False
+luka;luka;Luka;Lukic;Musko;luka@gmail.com;23/12/1997 00:00:00;Posetilac;False
+lana;lana;Lana;Milic;Zensko;lana@uns.ac.rs;09/09/1990 00:00:00;Trener;False
+lea;lea;Lea;Vidovic;Zensko;leavidovic@gmail.com;03/06/1996 00:00:00;Trener;False

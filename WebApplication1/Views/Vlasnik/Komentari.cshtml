@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Komentari";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            width: 80%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2>Komentari</h2>
+
+
+    <table border="1">
+        <tr>
+            <th>Posetilac</th>
+            <th>Fitnes centar</th>
+            <th>Komentar</th>
+            <th>Ocena</th>
+        </tr>
+        @foreach (var item in ViewBag.Komentari)
+        {
+            <tr>
+                <td>@item.Posetilac.KorisnickoIme</td>
+                <td>@item.FitnesCentar.Naziv</td>
+                <td>@item.TekstKomentara</td>
+                <td>@item.Ocena</td>
+                <td align="center">
+                    <form action="~/Vlasnik/OdobriKomentar">
+                        <input type="number" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Odobri" />
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

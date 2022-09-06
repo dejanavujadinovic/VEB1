@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "UrediProfil";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style'
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2>UrediProfil</h2>
+    @*<p style="color:red;">@ViewBag.Error</p>*@
+    <form action="~/Home/UrediProfil" method="post">
+        <table>
+            <tr>
+                <td>Lozinka</td>
+                <td>
+                    <input type="password" name="lozinka" value="@ViewBag.Profil.Lozinka" />
+                </td>
+            </tr>
+            <tr>
+                <td>Ime</td>
+                <td>
+                    <input type="text" name="ime" value="@ViewBag.Profil.Ime" />
+                </td>
+            </tr>
+            <tr>
+                <td>Prezime</td>
+                <td>
+                    <input type="text" name="prezime" value="@ViewBag.Profil.Prezime" />
+                </td>
+            </tr>
+            <tr>
+                <td>Pol</td>
+                <td>
+                    <select name="pol" value="@ViewBag.Profil.Pol">
+                        <option>Musko</option>
+                        <option>Zensko</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" name="email" value="@ViewBag.Profil.Email" />
+                </td>
+            </tr>
+            <tr>
+                <td>Datum rodjenja</td>
+                <td>
+                    <input type="text" name="datumRodjenja" value="@ViewBag.Profil.FormatiranDatum" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Izmeni" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

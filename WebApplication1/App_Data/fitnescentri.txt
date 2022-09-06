@@ -1,0 +1,6 @@
+3;Fitnes centar 3;Pavla Papa 15, Novi Sad, 21000;2005;admin;1000;1500;2000;2500;3000;False
+4;Fitnes centar 4;Cara Dusana 10, Beograd, 20000;2020;admin;1600;1500;2000;2500;3000;False
+1;NON STOP;Mihaila Pupina 18, Novi Sad, 21000;2017;admin;2700;15000;500;400;3000;False
+2;Fitnes centar 2;Stevana Sremca 11, Novi Sad, 21000;2017;admin;1000;1500;2000;2500;3000;False
+8;Classic Gym;Bulevar Oslobodjenja 45, Novi Sad, 21000;2005;admin;3600;10000;400;600;5000;False
+6;Novi centar;Valentina Vodnika 3, Subotica, 18000;2019;admin;2500;15000;300;1300;3000;False

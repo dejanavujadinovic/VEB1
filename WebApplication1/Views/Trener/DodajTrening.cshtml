@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "DodajTrening";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 42%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+        p {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <p style="color:red; font-size:15px;">@ViewBag.Error</p>
+    <h2>DodajTrening</h2>
+
+    <form action="~/Trener/DodajTrening" method="post">
+        <table>
+            <tr>
+                <td>Naziv</td>
+                <td>
+                    <input type="text" name="naziv" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Tip treninga</td>
+                <td>
+                    <input type="text" name="tipTreninga" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Trajanje treninga</td>
+                <td>
+                    <input type="number" name="trajanjeTreninga" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Datum i vreme treninga</td>
+                <td>
+                    <input type="text" name="datumVremeTreninga" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Maksimalan broj posetilaca</td>
+                <td>
+                    <input type="number" name="maxPosetilaca" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Posalji" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

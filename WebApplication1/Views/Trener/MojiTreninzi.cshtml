@@ -1,0 +1,228 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<FitnesCentar>
+@{
+    ViewBag.Title = "MojiTreninzi";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+        p {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Predstojeci treninzi</h2>
+    <p style="color:red;">@ViewBag.Error</p>
+    <center>
+        <div style="background-color:green; color:white;">
+            <a style="color:white;" href="~/Trener/DodajTrening">Dodaj novi trening</a>
+        </div>
+    </center>
+
+
+
+    <table border="1">
+        <tr>
+            <th>Naziv</th>
+            <th>Tip treninga</th>
+            <th>Trajanje treninga</th>
+            <th>Datum i vreme treninga</th>
+            <th>Maksimalan broj posetilaca</th>
+            <th>Broj prijavljenih posetilaca</th>
+            <th>Fitnes centar</th>
+        </tr>
+        @foreach (var item in ViewBag.SpisakTreninga)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.TipTreninga</td>
+                <td>@item.TrajanjeTreninga</td>
+                <td>@item.FormatiranDatum</td>
+                <td>@item.MaxPosetilaca</td>
+                @{int i = 0; }
+                @foreach (var posetioci in @ViewBag.BrojPosetilaca)
+                {
+                    if (posetioci.Id == item.Id)
+                    {
+                        i++;
+                    }
+                }
+                <td>
+                    @i
+                    <form action="~/Trener/SpisakPosetilaca">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Pogledaj spisak" />
+                    </form>
+                </td>
+                @foreach (FitnesCentar item2 in Model)
+                {
+                    if (item.FitnesCentar.Id == item2.Id)
+                    {
+                        <td>@item2.Naziv</td>
+                    }
+                }
+                <td>
+                    <form action="~/Trener/IzmenaTreninga">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Izmeni" />
+                    </form>
+                </td>
+                <td colspan="2" align="center">
+                    <form action="~/Trener/BrisanjeTreninga">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Obrisi" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <h2>Raniji treninzi</h2>
+    <form action="~/Trener/SortiranjeT" class="forma">
+        <select name="vrednost">
+            <option>Naziv</option>
+            <option>Tip treninga</option>
+            <option>Datum i vreme odrzavanja treninga</option>
+        </select>
+        <select name="nacin">
+            <option>Opadajuce</option>
+            <option>Rastuce</option>
+        </select>
+        <input type="submit" value="Sortiraj" />
+    </form>
+    <table border="1">
+        <tr>
+            <th>Naziv</th>
+            <th>Tip treninga</th>
+            <th>Trajanje treninga</th>
+            <th>Datum i vreme treninga</th>
+            <th>Maksimalan broj posetilaca</th>
+            <th>Broj prijavljenih posetilaca</th>
+            <th>Fitnes centar</th>
+        </tr>
+        @foreach (var item in ViewBag.SpisakTreninga2)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.TipTreninga</td>
+                <td>@item.TrajanjeTreninga</td>
+                <td>@item.FormatiranDatum</td>
+                <td>@item.MaxPosetilaca</td>
+                @{int i = 0; }
+                @foreach (var posetioci in @ViewBag.BrojPosetilaca)
+                {
+                    if (posetioci.Id == item.Id)
+                    {
+                        i++;
+                    }
+                }
+                <td>
+                    @i
+                    <form action="~/Trener/SpisakPosetilaca">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Pogledaj spisak" />
+                    </form>
+                </td>
+                @foreach (FitnesCentar item2 in Model)
+                {
+                    if (item.FitnesCentar.Id == item2.Id)
+                    {
+                        <td>@item2.Naziv</td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+
+    <h2 style="width:50%; height:30%">Pretraga</h2>
+    <div class="sort">
+        <form accept-charset="UTF-8" action="~/Trener/PretragaT">
+            <table style="width:initial;">
+                <tr>
+                    <td>Naziv:</td>
+                    <td>
+                        <input type="text" name="naziv" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tip treninga:</td>
+                    <td>
+                        <input type="text" name="tip" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Datum i vreme odrzavanja:</td>
+                    <td>
+                        <input type="text" name="minvrednost" />-<input type="text" name="maxvrednost" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Pretrazi" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>

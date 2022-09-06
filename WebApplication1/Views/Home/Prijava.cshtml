@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Prijava";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: initial;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: gold;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+            width: 100%;
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+        p {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prijava</h2>
+    <p style="color:red;">@ViewBag.Error</p>
+    <form action="~/Home/Prijava" method="post">
+        <table>
+
+            <tr>
+                <td>Korisnicko ime</td>
+                <td>
+                    <input type="text" name="korisnickoIme" />
+                </td>
+            </tr>
+            <tr>
+                <td>Lozinka</td>
+                <td>
+                    <input type="password" name="lozinka" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Posalji" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br />
+    <p>Nemate nalog? <a href="~/Home/Registracija">Registrujte se!</a></p>
+</body>

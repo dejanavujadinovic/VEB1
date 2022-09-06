@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "Detalji";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            width:80%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<h2>Detalji</h2>
+<table>
+    @foreach (var item in ViewBag.Centri)
+    {
+        if (item.Id == ViewBag.Centar)
+        {
+            <tr>
+                <td>Naziv</td>
+                <td>@item.Naziv</td>
+            </tr>
+            <tr>
+                <td>Adresa</td>
+                <td>@item.Adresa</td>
+            </tr>
+            <tr>
+                <td>Godina otvaranja</td>
+                <td>@item.Godina</td>
+            </tr>
+            <tr>
+                <td>Vlasnik</td>
+                <td>@item.Vlasnik.KorisnickoIme</td>
+            </tr>
+            <tr>
+                <td>Cena mesecne clanarine</td>
+                <td>@item.CenaMesecne</td>
+            </tr>
+            <tr>
+                <td>Cena godisnje clanarine</td>
+                <td>@item.CenaGodisnje</td>
+            </tr>
+            <tr>
+                <td>Cena jednog treninga</td>
+                <td>@item.CenaTreninga</td>
+            </tr>
+            <tr>
+                <td>Cena grupnog treninga</td>
+                <td>@item.CenaGrupnog</td>
+            </tr>
+            <tr>
+                <td>Cena personalnog treninga</td>
+                <td>@item.CenaPersonalnog</td>
+            </tr>
+        }
+    }
+</table>
+
+<h2>Grupni treninzi</h2>
+<table border="1">
+    <tr>
+        <th>Naziv</th>
+        <th>Tip treninga</th>
+        <th>Trajanje treninga</th>
+        <th>Datum i vreme treninga</th>
+        <th>Maksimalan broj posetilaca</th>
+        <th>Broj prijavljenih posetilaca</th>
+    </tr>
+    @foreach (var item in ViewBag.Treninzi)
+    {
+    <tr>
+        <td>@item.Naziv</td>
+        <td>@item.TipTreninga</td>
+        <td>@item.TrajanjeTreninga</td>
+        <td>@item.FormatiranDatum</td>
+        <td>@item.MaxPosetilaca</td>
+        @if (item.SpisakPosetilaca == null)
+        {
+            <td>0</td>
+        }
+        else
+        {
+            <td>@item.SpisakPosetilaca.Count</td>
+        }
+
+    </tr>
+    }
+</table>
+
+<h2>Komentari</h2>
+<table border="1">
+    <tr>
+        <th>Posetilac</th>
+        <th>Komentar</th>
+        <th>Ocena</th>
+    </tr>
+    @foreach (var item in ViewBag.Komentari)
+    {
+        <tr>
+            <td>@item.Posetilac.KorisnickoIme</td>
+            <td>@item.TekstKomentara</td>
+            <td>@item.Ocena</td>
+        </tr>
+    }
+</table>

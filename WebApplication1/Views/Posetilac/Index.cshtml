@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 42%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h2>Index</h2>
+    <form action="~/Posetilac/Sortiranje"  class="forma">
+        <select name="vrednost">
+            <option>Naziv</option>
+            <option>Adresa</option>
+            <option>Godina</option>
+        </select>
+        <select name="nacin">
+            <option>Opadajuce</option>
+            <option>Rastuce</option>
+        </select>
+        <input type="submit" value="Sortiraj" />
+    </form>
+    <table border="1">
+        <tr>
+            <th>Naziv</th>
+            <th>Adresa</th>
+            <th>Godina otvaranja</th>
+            <th></th>
+        </tr>
+        @foreach (var item in ViewBag.Centri)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.Adresa</td>
+                <td>@item.Godina</td>
+                <td align="center">
+                    <form action="~/Posetilac/Detalji">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Detalji" name="detalji" />
+                    </form>
+                </td>
+                <td align="center">
+                    <form action="~/Posetilac/Komentar">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Ostavi komentar" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+
+    @*<h2>Sortiranje</h2>*@
+
+    <h2 style="width:42%; height:30%">Pretraga</h2>
+    <div class="sort">
+        <form accept-charset="UTF-8" action="~/Home/Pretraga">
+            <table>
+                <tr>
+                    <td>Naziv:</td>
+                    <td><input type="text" name="naziv" /></td>
+                </tr>
+                <tr>
+                    <td>Adresa:</td>
+                    <td><input type="text" name="adresa" /></td>
+                </tr>
+                <tr>
+                    <td>Godina:</td>
+                    <td>
+                        <input type="text" name="minvrednost" />-
+                        <input type="text" name="maxvrednost" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="2"><input type="submit" value="Pretrazi" /></td>
+                </tr>
+            </table>
+        </form>
+        <center>
+            <div style="background-color:green; color:white;">
+                <a style="color:white;" href="~/Posetilac/IstorijaTreninga">Istorija grupnih treninga</a>
+            </div>
+        </center>
+    </div>
+</body>

@@ -1,0 +1,117 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<FitnesCentar>
+
+@{
+    ViewBag.Title = "MojiCentri";
+}
+<head>
+    <style>
+        div {
+            background-color: darkgoldenrod;
+        }
+
+        body {
+            background-image: url("../../teretana.jpg");
+            color: black;
+            font-family: 'Bookman Old Style';
+        }
+
+        table {
+            background-color: goldenrod;
+            border-color: black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            font-size: 15px;
+        }
+
+        table, tr, th, td {
+            border: 3px solid darkgoldenrod;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .sort {
+            background-color: goldenrod;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40.5%;
+            height: 30%;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: white;
+            border: 1px solid white;
+            border-color: white;
+            text-align: center;
+        }
+
+        h2 {
+            width: 80%;
+            background-color: white;
+            text-align: center;
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Bookman Old Style';
+        }
+
+        .forma {
+            background-color: darkgoldenrod;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <p style="color:red">@ViewBag.Error</p>
+    <h2>MojiCentri</h2>
+    <center>
+        <div style="background-color:green;">
+            <a style="color:white;" href="~/Vlasnik/DodajCentar">Dodaj fitnes centar</a>
+        </div>
+    </center>
+
+    <table border="1">
+        <tr>
+            <th>Naziv</th>
+            <th>Adresa</th>
+            <th>Godina otvaranja</th>
+            <th>Vlasnik</th>
+            <th>Cena mesecne clanarine</th>
+            <th>Cena godisnje clanarine</th>
+            <th>Cena jednog treninga</th>
+            <th>Cena grupnog treninga</th>
+            <th>Cena personalnog treninga</th>
+
+        </tr>
+        @foreach (FitnesCentar item in Model)
+        {
+            <tr>
+                <td>@item.Naziv</td>
+                <td>@item.Adresa</td>
+                <td>@item.Godina</td>
+                <td>@item.Vlasnik.KorisnickoIme</td>
+                <td>@item.CenaMesecne</td>
+                <td>@item.CenaGodisnje</td>
+                <td>@item.CenaTreninga</td>
+                <td>@item.CenaGrupnog</td>
+                <td>@item.CenaPersonalnog</td>
+                <td>
+                    <form action="~/Vlasnik/IzmeniCentar">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Izmeni" />
+                    </form>
+                </td>
+                <td align="center">
+                    <form action="~/Vlasnik/IzbrisiCentar">
+                        <input type="text" name="id" value="@item.Id" hidden />
+                        <input type="submit" value="Obrisi" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
